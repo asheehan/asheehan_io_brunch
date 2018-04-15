@@ -1,0 +1,27 @@
+html
+  head
+    title Andrew Sheehan
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css"
+    link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+  body
+    .container
+      header.header
+        nav.navbar.navbar-light.bg-light
+          ul.nav.nav-pills.pull-right
+            li
+              a href="/" My link B
+        / nav.navbar.navbar-expand-lg.navbar-dark.bg-transparent role="navigation"
+          ul.nav.nav-pills.pull-right
+            li
+              a href="/" My link B
+        span.logo
+
+      p.alert.alert-info role="alert" = get_flash(@conn, :info)
+      p.alert.alert-danger role="alert" = get_flash(@conn, :error)
+
+      main role="main"
+        = render @view_module, @view_template, assigns
+
+    script src="#{static_path(@conn, "/js/app.js")}"

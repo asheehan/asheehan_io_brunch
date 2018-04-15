@@ -1,2 +1,4 @@
 .idea/
 *.iml
+assets/node_modules/
+priv/static/
